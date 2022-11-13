@@ -20,7 +20,8 @@
             {% for brand in brand_names %}
                 <tr>
                     <td>{{ forloop.counter }}</td>
-                    <td><a href="{% url 'products' %}">{{brand.name}}</a></td>
+<!--                    <td><a href="{% url 'brand' %}">{{brand.name}}</a></td>-->
+                    <td>{{brand.name}}</td>
                 </tr>
             {% endfor %}
         </tbody>

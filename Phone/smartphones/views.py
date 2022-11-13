@@ -17,7 +17,8 @@ def get_models(request):
     # print(queryset)
     return render(request, 'models-table.html', {'model_names': queryset})
 
-def get_products(request, model):
-    queryset = Product.objectsfilter(title__istartswith='R').all()
-    # print(queryset)
-    return render(request, 'products-table.html', {'product_names': queryset})
+def get_products(request, brand_name):
+    queryset = Product.objects.all().filter(model=brand_name)
+    brand = Model.objects.get(model=brand_name)
+    context = {'products':queryset, 'brand':brand}
+    return render(request, 'products-table.html', context)
