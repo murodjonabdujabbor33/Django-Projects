@@ -19,7 +19,8 @@
             {% for model in model_names %}
                 <tr>
                     <td>{{ forloop.counter }}</td>
-                    <td><a href="{% url 'products' %}">{{model.name}}</a></td>
+<!--                    <td><a href="{% url 'models' %}">{{model.name}}</a></td>-->
+                    <td>{{model.name}}S</td>
                 </tr>
             {% endfor %}
         </tbody>
