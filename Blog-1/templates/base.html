@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Murodjon.com</title>
+</head>
+<body>
+    <header>
+        <a href="{% url 'home' %}">Murodjon's Blog</a>
+    </header>
+    <div>
+        {% block content %}
+
+        {% endblock content %}
+    </div>
+</body>
+</html>
