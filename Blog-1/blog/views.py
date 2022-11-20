@@ -24,5 +24,6 @@ class BlogUpdateView(UpdateView):
     fields = ['title', 'body']
 
 class BlogDeleteView(DeleteView):
-    pass
+    model = Post
+    template_name = 'post_delete.html'
 
