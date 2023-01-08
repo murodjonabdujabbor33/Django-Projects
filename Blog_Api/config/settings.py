@@ -37,16 +37,29 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
 
     # local
     'posts.apps.PostsConfig',
 
     # tashqi
     'rest_framework',
+    'rest_framework.authtoken',
+    'dj_rest_auth',
+    'dj_rest_auth.registration',
+    'allauth',
+    'allauth.account',
 ]
+EMAIL_BACkEND = 'django.core.mail.backends.console.EmailBackend'
+SITE_ID = 1
+
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.AllowAny',
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication', # borserdagi API uchun ishlatiladi (login, logout)
+        'rest_framework.authentication.TokenAuthentication',  # session_id ni API bilan bog'lashga ishlatiladi.
     ]
 }
 
